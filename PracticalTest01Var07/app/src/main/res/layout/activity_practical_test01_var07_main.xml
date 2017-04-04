@@ -42,7 +42,11 @@
         android:layout_marginTop="53dp"
         android:id="@+id/editText2"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
 
     <Button
         android:text="Compute"
