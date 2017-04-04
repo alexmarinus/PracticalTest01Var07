@@ -1,12 +1,15 @@
 package practicaltest01var07.eim.systems.cs.pub.ro.practicaltest01var07;
 
 import android.content.Intent;
+import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
 
 public class PracticalTest01Var07MainActivity extends AppCompatActivity {
 
@@ -70,4 +73,13 @@ public class PracticalTest01Var07MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        if (savedInstanceState.containsKey("expression")) {
+            String savedExpression = savedInstanceState.getString("expression");
+            if (expression.compareTo(savedExpression) == 0) {
+                Log.d("Restore", "Saved value is " + expression);
+            }
+        }
+    }
 }
