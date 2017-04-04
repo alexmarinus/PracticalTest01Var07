@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.EditText;
 
 public class PracticalTest01Var07SecondaryActivity extends AppCompatActivity {
 
@@ -26,9 +27,11 @@ public class PracticalTest01Var07SecondaryActivity extends AppCompatActivity {
                 expressionresult += Integer.parseInt(expressionTokens[i]);
             }
         }
-
-        Intent computeIntent = new Intent();
-        
-
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
 }
