@@ -20,11 +20,13 @@ public class PracticalTest01Var07SecondaryActivity extends AppCompatActivity {
 
         if (intent != null && intent.getExtras().containsKey("expression")) {
             expressionToCompute = intent.getStringExtra("expression");
-            expressionToCompute = expressionToCompute.replaceAll("\\+", " +");
+            expressionToCompute = expressionToCompute.replaceAll("\\+", ";");
             int expressionresult = 0;
-            String[] expressionTokens = expressionToCompute.split(" +");
+            String[] expressionTokens = expressionToCompute.split(";");
             for (int i = 0; i < expressionTokens.length; i ++) {
                 expressionresult += Integer.parseInt(expressionTokens[i]);
+            EditText finalResultText = (EditText) findViewById (R.id.editText2);
+            finalResultText.setText (String.valueOf(expressionresult));
             }
         }
     }
